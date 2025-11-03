@@ -1,7 +1,6 @@
 <div align="center">
 
-# =
- py-rtoon
+# 🐍 py-rtoon 🦀
 
 **Python bindings for RToon - Token-Oriented Object Notation**
 
@@ -9,8 +8,11 @@
 
 <img src="https://github.com/alpkeskin/gotoon/raw/main/.github/og.png" alt="TOON - Token-Oriented Object Notation" width="600">
 
+[![PyPI](https://img.shields.io/pypi/v/py-rtoon)](https://pypi.org/project/py-rtoon/)
+[![Python](https://img.shields.io/pypi/pyversions/py-rtoon)](https://pypi.org/project/py-rtoon/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Python](https://img.shields.io/badge/python-3.13+-blue.svg)](https://www.python.org)
+[![CI](https://github.com/premchotipanit/py-rtoon/actions/workflows/ci.yml/badge.svg)](https://github.com/premchotipanit/py-rtoon/actions/workflows/ci.yml)
+[![Tests](https://img.shields.io/badge/tests-62%20passed-brightgreen)](https://github.com/premchotipanit/py-rtoon/tree/main/src/tests)
 
 </div>
 

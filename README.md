@@ -561,6 +561,6 @@ MIT 2025
 
 <div align="center">
 
-**Built with d using Rust + Python**
+**Built with ❤️ using Rust + Python**
 
 </div>

@@ -52,7 +52,7 @@ AI is becoming cheaper and more accessible, but larger context windows allow for
 ### JSON vs TOON Comparison
 
 <details>
-<summary><strong>=� Click to see the token efficiency comparison</strong></summary>
+<summary><strong>👉 Click to see the token efficiency comparison</strong></summary>
 
 **JSON** (verbose, token-heavy):
 ```json
@@ -156,16 +156,17 @@ While you could implement TOON in pure Python, `py-rtoon` gives you:
 
 ## Key Features
 
-- =� **Token-efficient:** typically 3060% fewer tokens than JSON
-- >? **LLM-friendly guardrails:** explicit lengths and fields enable validation
-- <q **Minimal syntax:** removes redundant punctuation (braces, brackets, most quotes)
-- =� **Indentation-based structure:** like YAML, uses whitespace instead of braces
-- >� **Tabular arrays:** declare keys once, stream data as rows
-- = **Round-trip support:** encode and decode with full fidelity
-- >� **Fast:** powered by Rust via PyO3
-- =
- **Pythonic:** clean API with proper type hints
-- � **Customizable:** delimiter (comma/tab/pipe), length markers, and indentation
+- **Token-efficient:** typically 
+**30~60%** fewer tokens than JSON
+- **LLM-friendly guardrails:**
+  - explicit lengths and fields enable validation
+- **Minimal syntax:** removes redundant punctuation (braces, brackets, most quotes)
+- **Indentation-based structure:** like YAML, uses whitespace instead of braces
+- **Tabular arrays:** declare keys once, stream data as rows
+- **Round-trip support:** encode and decode with full fidelity
+- **Fast:** powered by Rust via [PyO3](https://pyo3.rs/)
+- **Pythonic:** clean API with proper type hints
+- **Customizable:** delimiter (comma/tab/pipe), length markers, and indentation
 
 ## Installation
 
@@ -526,7 +527,7 @@ All tests use Python 3.11+ type hints and follow best practices. See [src/tests/
 Contributions are welcome! Please feel free to submit a Pull Request.
 
 <details>
-<summary><strong>> How to Contribute</strong></summary>
+<summary><strong> How to Contribute</strong></summary>
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/amazing-feature`)
@@ -550,12 +551,13 @@ MIT 2025
 - **TOON Specification:** [SPEC.md](https://github.com/shreyasbhat0/rtoon/blob/main/SPEC.md)
 
 ## TODO-Lists
-- Release and index to Pypi
-- Add compatibility to other Python version with other platform, now only Python 3.14 on Mac-OS (M3) is tested
-- Add performance benchmarking other TOON tools
-- Add LLM Accuracy benchmarking
+- <s>Release and index to Pypi</s> - ✅ Done
+- <s>Add compatibility to other Python version with other platform, now only Python 3.14 on Mac-OS (M3) is tested</s> <- ✅ Done by Github CI 
+- Add performance benchmarking other TOON tools <- **Need contributors**
+- Add LLM Accuracy benchmarking <- **Need contributors**
 - Add more data type support (Pydantic/ORM/dict)
 - Ensure framework compatibility like (Langchain/Langgraph/CrewAI/ etc.)
+- Add code checker in CI pipeline
 
 ---
 

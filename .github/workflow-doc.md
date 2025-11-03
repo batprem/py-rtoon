@@ -2,11 +2,13 @@
 
 This directory contains GitHub Actions workflows for CI/CD automation.
 
+> **⚡ Performance Optimization:** CI workflows automatically skip when only documentation files (`.md`, docs) are modified, saving ~45 minutes per documentation commit. See [WORKFLOWS.md](WORKFLOWS.md) for details.
+
 ## Workflows
 
 ### 1. CI Workflow (`ci.yml`)
 
-**Trigger:** Push to main, Pull Requests
+**Trigger:** Push to main, Pull Requests (excludes `.md` files)
 
 **Purpose:** Continuous integration testing
 
@@ -24,7 +26,7 @@ This directory contains GitHub Actions workflows for CI/CD automation.
 
 ### 2. Test Workflow (`test.yml`)
 
-**Trigger:** Push to main/develop, Pull Requests
+**Trigger:** Push to main/develop, Pull Requests (excludes `.md` files)
 
 **Purpose:** Comprehensive testing with linting
 

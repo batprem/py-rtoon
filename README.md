@@ -11,7 +11,7 @@
 [![PyPI](https://img.shields.io/pypi/v/py-rtoon)](https://pypi.org/project/py-rtoon/)
 [![Python](https://img.shields.io/pypi/pyversions/py-rtoon)](https://pypi.org/project/py-rtoon/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![CI](https://github.com/premchotipanit/py-rtoon/actions/workflows/ci.yml/badge.svg)](https://github.com/premchotipanit/py-rtoon/actions/workflows/ci.yml)
+[![CI](https://github.com/batprem/py-rtoon/actions/workflows/ci.yml/badge.svg)](https://github.com/batprem/py-rtoon/actions/workflows/ci.yml)
 [![Tests](https://img.shields.io/badge/tests-86%20passed-brightgreen)](https://github.com/premchotipanit/py-rtoon/tree/main/src/tests)
 
 </div>

@@ -15,8 +15,7 @@ class TestEdgeCases:
         json_str = json.dumps(data)
 
         toon = py_rtoon.encode_default(json_str)
-        decoded_json = py_rtoon.decode_default(toon)
-        decoded = json.loads(decoded_json)
+        decoded = py_rtoon.decode_default(toon)
 
         assert decoded["text"] == long_text
 
@@ -31,8 +30,7 @@ class TestEdgeCases:
 
         json_str = json.dumps(data)
         toon = py_rtoon.encode_default(json_str)
-        decoded_json = py_rtoon.decode_default(toon)
-        decoded = json.loads(decoded_json)
+        decoded = py_rtoon.decode_default(toon)
 
         # Navigate to deepest level
         current_decoded = decoded["level1"]
@@ -46,8 +44,7 @@ class TestEdgeCases:
         json_str = json.dumps(data)
 
         toon = py_rtoon.encode_default(json_str)
-        decoded_json = py_rtoon.decode_default(toon)
-        decoded = json.loads(decoded_json)
+        decoded = py_rtoon.decode_default(toon)
 
         assert len(decoded) == 100
         assert all(decoded[f"key{i}"] == i for i in range(100))
@@ -58,8 +55,7 @@ class TestEdgeCases:
         json_str = json.dumps(data)
 
         toon = py_rtoon.encode_default(json_str)
-        decoded_json = py_rtoon.decode_default(toon)
-        decoded = json.loads(decoded_json)
+        decoded = py_rtoon.decode_default(toon)
 
         assert decoded["numbers"] == list(range(1000))
 
@@ -74,8 +70,7 @@ class TestEdgeCases:
         json_str = json.dumps(data)
 
         toon = py_rtoon.encode_default(json_str)
-        decoded_json = py_rtoon.decode_default(toon)
-        decoded = json.loads(decoded_json)
+        decoded = py_rtoon.decode_default(toon)
 
         # Check that at least some keys are preserved
         assert len(decoded) >= 2
@@ -91,8 +86,7 @@ class TestEdgeCases:
         json_str = json.dumps(data)
 
         toon = py_rtoon.encode_default(json_str)
-        decoded_json = py_rtoon.decode_default(toon)
-        decoded = json.loads(decoded_json)
+        decoded = py_rtoon.decode_default(toon)
 
         assert "quote" in decoded
         assert "newline" in decoded
@@ -110,8 +104,7 @@ class TestEdgeCases:
         json_str = json.dumps(data)
 
         toon = py_rtoon.encode_default(json_str)
-        decoded_json = py_rtoon.decode_default(toon)
-        decoded = json.loads(decoded_json)
+        decoded = py_rtoon.decode_default(toon)
 
         assert len(decoded["mixed"]) == 4
         assert decoded["mixed"][0] == 1
@@ -132,8 +125,7 @@ class TestEdgeCases:
         json_str = json.dumps(data)
 
         toon = py_rtoon.encode_default(json_str)
-        decoded_json = py_rtoon.decode_default(toon)
-        decoded = json.loads(decoded_json)
+        decoded = py_rtoon.decode_default(toon)
 
         assert decoded["zero"] == 0
         assert decoded["large_int"] == 9999999999999999
@@ -144,8 +136,7 @@ class TestEdgeCases:
         json_str = json.dumps(data)
 
         toon = py_rtoon.encode_default(json_str)
-        decoded_json = py_rtoon.decode_default(toon)
-        decoded = json.loads(decoded_json)
+        decoded = py_rtoon.decode_default(toon)
 
         assert decoded["items"] == ["single"]
 
@@ -160,8 +151,7 @@ class TestEdgeCases:
         json_str = json.dumps(data)
 
         toon = py_rtoon.encode_default(json_str)
-        decoded_json = py_rtoon.decode_default(toon)
-        decoded = json.loads(decoded_json)
+        decoded = py_rtoon.decode_default(toon)
 
         # Whitespace handling depends on implementation
         assert "leading" in decoded
@@ -175,8 +165,7 @@ class TestEdgeCases:
         json_str = json.dumps(data)
 
         toon = py_rtoon.encode_default(json_str)
-        decoded_json = py_rtoon.decode_default(toon)
-        decoded = json.loads(decoded_json)
+        decoded = py_rtoon.decode_default(toon)
 
         assert decoded["key"] == 2
 
@@ -186,8 +175,7 @@ class TestEdgeCases:
         json_str = json.dumps(data)
 
         toon = py_rtoon.encode_default(json_str)
-        decoded_json = py_rtoon.decode_default(toon)
-        decoded = json.loads(decoded_json)
+        decoded = py_rtoon.decode_default(toon)
 
         # At least one key should be present
         assert len(decoded) >= 1
@@ -222,7 +210,6 @@ class TestErrorRecovery:
         json_str = json.dumps(data)
 
         toon = py_rtoon.encode_default(json_str)
-        decoded_json = py_rtoon.decode_default(toon)
-        decoded = json.loads(decoded_json)
+        decoded = py_rtoon.decode_default(toon)
 
         assert decoded["empty"] == ""

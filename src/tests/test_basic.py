@@ -103,8 +103,7 @@ class TestBasicDecoding:
     def test_decode_simple_object(self) -> None:
         """Test decoding a simple object."""
         toon = "name: Alice\nage: 30"
-        json_str = py_rtoon.decode_default(toon)
-        data = json.loads(json_str)
+        data = py_rtoon.decode_default(toon)
 
         assert data["name"] == "Alice"
         assert data["age"] == 30
@@ -112,8 +111,7 @@ class TestBasicDecoding:
     def test_decode_with_array(self) -> None:
         """Test decoding object with array."""
         toon = "tags[3]: python,rust,toon"
-        json_str = py_rtoon.decode_default(toon)
-        data = json.loads(json_str)
+        data = py_rtoon.decode_default(toon)
 
         assert data["tags"] == ["python", "rust", "toon"]
 
@@ -123,8 +121,7 @@ class TestBasicDecoding:
   id: 123
   name: Ada
   active: true"""
-        json_str = py_rtoon.decode_default(toon)
-        data = json.loads(json_str)
+        data = py_rtoon.decode_default(toon)
 
         assert data["user"]["id"] == 123
         assert data["user"]["name"] == "Ada"
@@ -135,8 +132,7 @@ class TestBasicDecoding:
         toon = """users[2]{id,name,role}:
   1,Alice,admin
   2,Bob,user"""
-        json_str = py_rtoon.decode_default(toon)
-        data = json.loads(json_str)
+        data = py_rtoon.decode_default(toon)
 
         assert len(data["users"]) == 2
         assert data["users"][0]["id"] == 1
@@ -146,16 +142,14 @@ class TestBasicDecoding:
     def test_decode_empty_array(self) -> None:
         """Test decoding empty array."""
         toon = "items[0]:"
-        json_str = py_rtoon.decode_default(toon)
-        data = json.loads(json_str)
+        data = py_rtoon.decode_default(toon)
 
         assert data["items"] == []
 
     def test_decode_boolean_values(self) -> None:
         """Test decoding boolean values."""
         toon = "active: true\narchived: false"
-        json_str = py_rtoon.decode_default(toon)
-        data = json.loads(json_str)
+        data = py_rtoon.decode_default(toon)
 
         assert data["active"] is True
         assert data["archived"] is False
@@ -163,8 +157,7 @@ class TestBasicDecoding:
     def test_decode_null_value(self) -> None:
         """Test decoding null values."""
         toon = "value: null"
-        json_str = py_rtoon.decode_default(toon)
-        data = json.loads(json_str)
+        data = py_rtoon.decode_default(toon)
 
         assert data["value"] is None
 

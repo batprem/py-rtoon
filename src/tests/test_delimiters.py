@@ -81,7 +81,6 @@ class TestDelimiters:
         toon = py_rtoon.encode(json_str, options_with_pipe)
 
         # Decode back
-        decoded_json = py_rtoon.decode_default(toon)
-        decoded_data = json.loads(decoded_json)
+        decoded = py_rtoon.decode_default(toon)
 
-        assert decoded_data == data
+        assert decoded == data

@@ -16,8 +16,7 @@ class TestRoundtrip:
         toon = py_rtoon.encode_default(json_str)
 
         # Decode back to JSON
-        decoded_json = py_rtoon.decode_default(toon)
-        decoded = json.loads(decoded_json)
+        decoded = py_rtoon.decode_default(toon)
 
         assert decoded == original
 
@@ -36,8 +35,7 @@ class TestRoundtrip:
         json_str = json.dumps(original)
 
         toon = py_rtoon.encode_default(json_str)
-        decoded_json = py_rtoon.decode_default(toon)
-        decoded = json.loads(decoded_json)
+        decoded = py_rtoon.decode_default(toon)
 
         # Verify key values are present (structure might vary)
         assert decoded["user"]["name"] == original["user"]["name"]
@@ -54,8 +52,7 @@ class TestRoundtrip:
         json_str = json.dumps(original)
 
         toon = py_rtoon.encode_default(json_str)
-        decoded_json = py_rtoon.decode_default(toon)
-        decoded = json.loads(decoded_json)
+        decoded = py_rtoon.decode_default(toon)
 
         assert decoded == original
 
@@ -71,8 +68,7 @@ class TestRoundtrip:
         json_str = json.dumps(original)
 
         toon = py_rtoon.encode_default(json_str)
-        decoded_json = py_rtoon.decode_default(toon)
-        decoded = json.loads(decoded_json)
+        decoded = py_rtoon.decode_default(toon)
 
         assert len(decoded["users"]) == len(original["users"])
         for i, user in enumerate(decoded["users"]):
@@ -100,8 +96,7 @@ class TestRoundtrip:
         json_str = json.dumps(original)
 
         toon = py_rtoon.encode_default(json_str)
-        decoded_json = py_rtoon.decode_default(toon)
-        decoded = json.loads(decoded_json)
+        decoded = py_rtoon.decode_default(toon)
 
         assert decoded == original
 
@@ -117,8 +112,7 @@ class TestRoundtrip:
         json_str = json.dumps(original)
 
         toon = py_rtoon.encode_default(json_str)
-        decoded_json = py_rtoon.decode_default(toon)
-        decoded = json.loads(decoded_json)
+        decoded = py_rtoon.decode_default(toon)
 
         assert decoded["empty_array"] == []
         assert decoded["empty_object"] == {}
@@ -138,8 +132,7 @@ class TestRoundtrip:
         json_str = json.dumps(original)
 
         toon = py_rtoon.encode_default(json_str)
-        decoded_json = py_rtoon.decode_default(toon)
-        decoded = json.loads(decoded_json)
+        decoded = py_rtoon.decode_default(toon)
 
         assert decoded == original
 
@@ -153,8 +146,7 @@ class TestRoundtrip:
         json_str = json.dumps(original)
 
         toon = py_rtoon.encode_default(json_str)
-        decoded_json = py_rtoon.decode_default(toon)
-        decoded = json.loads(decoded_json)
+        decoded = py_rtoon.decode_default(toon)
 
         assert decoded == original
 
@@ -169,8 +161,7 @@ class TestRoundtrip:
         for _ in range(3):
             json_str = json.dumps(current)
             toon = py_rtoon.encode_default(json_str)
-            decoded_json = py_rtoon.decode_default(toon)
-            current = json.loads(decoded_json)
+            current = py_rtoon.decode_default(toon)
 
         assert current == original
 
@@ -185,8 +176,7 @@ class TestRoundtrip:
         json_str = json.dumps(original)
 
         toon = py_rtoon.encode_default(json_str)
-        decoded_json = py_rtoon.decode_default(toon)
-        decoded = json.loads(decoded_json)
+        decoded = py_rtoon.decode_default(toon)
 
         assert len(decoded["users"]) == 50
         assert decoded == original

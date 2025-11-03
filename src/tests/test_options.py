@@ -79,8 +79,7 @@ class TestDecodeOptions:
         options = py_rtoon.DecodeOptions()
         options_strict = options.with_strict(True)
 
-        json_str = py_rtoon.decode(toon, options_strict)
-        data = json.loads(json_str)
+        data = py_rtoon.decode(toon, options_strict)
         assert data["items"] == ["a", "b", "c"]
 
     def test_strict_mode_disabled(self) -> None:
@@ -90,8 +89,7 @@ class TestDecodeOptions:
         options_lenient = options.with_strict(False)
 
         # Should decode successfully
-        json_str = py_rtoon.decode(toon, options_lenient)
-        data = json.loads(json_str)
+        data = py_rtoon.decode(toon, options_lenient)
         assert "items" in data
         assert data["items"] == ["a", "b"]
 
@@ -101,8 +99,7 @@ class TestDecodeOptions:
         options = py_rtoon.DecodeOptions()
         options_coerce = options.with_coerce_types(True)
 
-        json_str = py_rtoon.decode(toon, options_coerce)
-        data = json.loads(json_str)
+        data = py_rtoon.decode(toon, options_coerce)
         assert data["value"] == 123
 
     def test_coerce_types_disabled(self) -> None:
@@ -111,8 +108,7 @@ class TestDecodeOptions:
         options = py_rtoon.DecodeOptions()
         options_no_coerce = options.with_coerce_types(False)
 
-        json_str = py_rtoon.decode(toon, options_no_coerce)
-        data = json.loads(json_str)
+        data = py_rtoon.decode(toon, options_no_coerce)
         # Result depends on implementation, but should decode successfully
         assert "value" in data
 
@@ -124,8 +120,7 @@ class TestDecodeOptions:
                          .with_strict(False)
                          .with_coerce_types(True))
 
-        json_str = py_rtoon.decode(toon, options_custom)
-        data = json.loads(json_str)
+        data = py_rtoon.decode(toon, options_custom)
         assert "items" in data
 
 
@@ -150,8 +145,7 @@ class TestOptionsRoundtrip:
         # Decode with lenient mode
         decode_opts = py_rtoon.DecodeOptions()
         decode_opts_lenient = decode_opts.with_strict(False)
-        decoded_json = py_rtoon.decode(toon, decode_opts_lenient)
-        decoded = json.loads(decoded_json)
+        decoded = py_rtoon.decode(toon, decode_opts_lenient)
 
         assert len(decoded["users"]) == 2
 
@@ -166,7 +160,6 @@ class TestOptionsRoundtrip:
         toon = py_rtoon.encode(json_str, encode_opts_marker)
 
         # Decode
-        decoded_json = py_rtoon.decode_default(toon)
-        decoded = json.loads(decoded_json)
+        decoded = py_rtoon.decode_default(toon)
 
         assert decoded == original

@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(maturin develop:*)",
+      "Bash(uv run:*)",
+      "Bash(uv add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

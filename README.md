@@ -12,7 +12,7 @@
 [![Python](https://img.shields.io/pypi/pyversions/py-rtoon)](https://pypi.org/project/py-rtoon/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![CI](https://github.com/premchotipanit/py-rtoon/actions/workflows/ci.yml/badge.svg)](https://github.com/premchotipanit/py-rtoon/actions/workflows/ci.yml)
-[![Tests](https://img.shields.io/badge/tests-62%20passed-brightgreen)](https://github.com/premchotipanit/py-rtoon/tree/main/src/tests)
+[![Tests](https://img.shields.io/badge/tests-86%20passed-brightgreen)](https://github.com/premchotipanit/py-rtoon/tree/main/src/tests)
 
 </div>
 
@@ -181,9 +181,8 @@ pip install py-rtoon
 
 ```python
 import py_rtoon
-import json
 
-# Prepare your data
+# Encode Python dict directly to TOON
 data = {
     "user": {
         "id": 123,
@@ -193,9 +192,7 @@ data = {
     }
 }
 
-# Encode to TOON
-json_str = json.dumps(data)
-toon = py_rtoon.encode_default(json_str)
+toon = py_rtoon.encode_default(data)
 print(toon)
 ```
 
@@ -209,24 +206,31 @@ user:
   tags[2]: reading,gaming
 ```
 
+**Decode back to Python dict:**
+
+```python
+# Decode TOON back to dict
+decoded = py_rtoon.decode_default(toon)
+print(decoded)
+# {'user': {'active': True, 'id': 123, 'name': 'Ada', 'tags': ['reading', 'gaming']}}
+```
+
 ## Examples
 
 ### Basic Encoding and Decoding
 
 ```python
 import py_rtoon
-import json
 
-# Encode JSON to TOON
+# Encode dict to TOON (new Pythonic API!)
 data = {"name": "Alice", "age": 30, "tags": ["python", "rust"]}
-json_str = json.dumps(data)
-toon = py_rtoon.encode_default(json_str)
+toon = py_rtoon.encode_default(data)
 print(f"Encoded: {toon}")
 
-# Decode TOON back to JSON
-decoded_json = py_rtoon.decode_default(toon)
-decoded_data = json.loads(decoded_json)
-print(f"Decoded: {decoded_data}")
+# Decode TOON back to dict
+decoded = py_rtoon.decode_default(toon)
+print(f"Decoded: {decoded}")
+print(f"Type: {type(decoded)}")
 ```
 
 **Output:**
@@ -237,6 +241,18 @@ age: 30
 tags[2]: python,rust
 
 Decoded: {'name': 'Alice', 'age': 30, 'tags': ['python', 'rust']}
+Type: <class 'dict'>
+```
+
+**Backward compatible with JSON strings:**
+
+```python
+import json
+
+# Still works with JSON strings
+json_str = json.dumps(data)
+toon = py_rtoon.encode_default(json_str)
+
 ```
 
 ### Custom Delimiters
@@ -482,7 +498,7 @@ For complete format specification, see the [TOON Specification](https://github.c
 
 ## Testing
 
-py-rtoon includes a comprehensive test suite with 62 tests covering all functionality:
+py-rtoon includes a comprehensive test suite with **86 tests** covering all functionality:
 
 ```bash
 # Run all tests
@@ -501,6 +517,7 @@ uv run pytest src/tests/test_basic.py
 - ✅ Options configuration (13 tests)
 - ✅ Round-trip conversion (10 tests)
 - ✅ Edge cases (16 tests)
+- ✅ **Dict support (24 tests)** - NEW!
 
 All tests use Python 3.11+ type hints and follow best practices. See [src/tests/README.md](src/tests/README.md) for more details.
 
@@ -518,7 +535,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 5. Push to the branch (`git push origin feature/amazing-feature`)
 6. Open a Pull Request
 
-Please ensure all 62 tests pass before submitting your PR.
+Please ensure all 86 tests pass before submitting your PR.
 
 </details>
 
